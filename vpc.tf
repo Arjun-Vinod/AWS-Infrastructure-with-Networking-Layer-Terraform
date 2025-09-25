@@ -55,3 +55,14 @@ resource "aws_internet_gateway" "aws_project_igw" {
     Name = "aws-project-igw"
   }
 }
+
+resource "aws_route_table" "public_rt" {
+  vpc_id = aws_vpc.aws_project.id
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.aws_project_igw.id
+  }
+  tags = {
+    Name = "aws-project-public-rt"
+  }
+}
