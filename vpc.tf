@@ -48,3 +48,10 @@ resource "aws_subnet" "private_subnet_2" {
     Type = "Private"
   }
 }
+
+resource "aws_internet_gateway" "aws_project_igw" {
+  vpc_id = aws_vpc.aws_project.id
+  tags = {
+    Name = "aws-project-igw"
+  }
+}
