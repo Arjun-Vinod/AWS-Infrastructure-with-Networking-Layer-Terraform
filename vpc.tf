@@ -66,3 +66,25 @@ resource "aws_route_table" "public_rt" {
     Name = "aws-project-public-rt"
   }
 }
+
+resource "aws_route_table" "private_rt_1" {
+  vpc_id = aws_vpc.aws_project.id
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.nat_gateway_1.id
+  }
+  tags = {
+    Name = "aws-project-private-rt-1"
+  }
+}
+
+resource "aws_route_table" "private_rt_2" {
+  vpc_id = aws_vpc.aws_project.id
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.nat_gateway_2.id
+  }
+  tags = {
+    Name = "aws-project-private-rt-2"
+  }
+}
