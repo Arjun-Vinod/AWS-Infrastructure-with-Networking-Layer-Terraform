@@ -10,6 +10,10 @@ This project creates a complete AWS infrastructure using Terraform, including:
 - Bastion host for secure access
 - Security Groups with appropriate rules
 
+## Architecture
+
+![AWS Infrastructure Architecture](/Networking.png)
+
 ## Setup Instructions
 
 1. **Clone this repository**
